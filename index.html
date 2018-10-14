@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Word Guess Game</title>
+  </head>
+
+  <body>
+
+    <h1>Word Guess Game</h1><br>
+    <h2>Press any key to start the game!</h2><br>
+        <div class="win-counter-section">
+            Wins
+            <div id="win-number-here"></div>
+        </div><br>
+            <div class="word-section">
+                Current Word
+                <div id="guessed-letters-here"></div>
+            </div><br>
+                <div class="remaining-counter-section">
+                        Number of Guesses Remaining
+                    <div id="remaining-numbers-here"></div>
+                </div><br>
+                    <div class="used-letter-section">
+                            Letters Already Used
+                        <div id="used-letters-here"></div>
+                    </div><br>
+                        <div id="game-message"></div><br>
+
+    <script>
+    // var letterChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var finalAnswer = "kobe"
+    var letterChoices = ["k", "o", "b", "e"];
+
+    var winNumber = 0;
+    var currentWord = "";
+    var guessRemaining = 10;
+    // var usedLetter = "";
+    var letterIndex = 0;
+
+    var winCounterSection = document.getElementById("win-number-here");
+    var wordSection = document.getElementById("guessed-letters-here");
+    var remainingCounterSection = document.getElementById("remaining-numbers-here");
+    var usedLetterSection = document.getElementById("used-letters-here");
+    var gameOverMessage = document.getElementById("game-message");
+
+
+
+
+    document.onkeyup = function(event) {
+    var userGuess = event.key.toLowerCase();
+    
+    remaining()
+
+    for (var i = 0; i < letterChoices.length; i++) {
+        if (userGuess === letterChoices[i]) {
+            // Update used letters
+            var usedLetterP = document.createElement("p");
+            usedLetterP.textContent = userGuess;
+            usedLetterSection.appendChild(usedLetterP);
+            }
+        
+            if (userGuess === "k" && userGuess === "o" && userGuest === "b" && userGuest === "e") {
+            winCounterSection.innerHTML = winNumber++;
+            }
+            
+            gameOver()
+        };
+    
+    
+    // function win() {
+    //     if ()
+    // }
+
+    // function usedLetters() {
+    //     var usedLetter = userGuess.value;
+    //     usedLetterSection.innerHTML = usedLetter;
+    //     }
+
+ 
+    // Update remaining guesses
+    function remaining() { 
+    remainingCounterSection.innerHTML = guessRemaining--;
+    }
+
+    // Function to end game
+    function gameOver() {
+      if (guessRemaining === 0) {
+        gameOverMessage.innerHTML = "Game Over!";
+        alert("GAME OVER!")
+      }
+    }
+    // Function to update remaining guesses
+
+    // function remainingGuesses() { for (var i = 0; i < letterChoices.length; i++) {
+    //     if (userGuess === letterChoices[i]) {
+    //         remainingCounterSection.innerHTML = guessRemaining--;
+    //         }
+    //     }
+    // }
+
+              
+    
+    // function to display used letters
+    // { usedLetterSection.innerHTML = userGuess; }
+
+    // We then use .forEach() to iterate through all the drinks in drinkList.
+    // With each iteration, we perform a series of code operations each time.
+    // function displayLetters() { for (var i = 0; i < letterChoices.length; i++) {
+    // // For each drink in the array, we create a new paragraph to hold that text.
+    // // A new paragraph will be created with each iteration of the loop.
+    // var usedLetterP = document.createElement("p");
+    // // We then assign the the text of this paragraph to be the text in the array item.
+    // usedLetterP.textContent = letterChoices[i];
+    // // We then add the paragraph to the our main div on the page ("#drink-options")
+    // usedLetterSection.appendChild(usedLetterP);
+    //     }
+    // }
+
+
+    // Function to update win numbers
+    // { winCounterSection.innerHTML = winNumber++; }
+    
+
+    // Function that updates the score...
+    // function updateScore() {
+    //   document.querySelector("#score").innerHTML = "Score: " + score;
+    // }
+
+
+        
+
+                
+
+//          if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+
+// if ((userGuess === "r") && (computerGuess === "s")) {
+//   wins++;
+// } else if ((userGuess === "r") && (computerGuess === "p")) {
+//   losses++;
+
+
+    // winCounterSection.innerHTML = winNumber;
+    // wordSection.innterHTML = ;
+    // remainingCounterSection.innerHTML = ;
+    // usedLetterSection.innerHTML = ;
+
+
+
+
+
+
+
+    
+    
+   
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    </script>
+    </body>
+
+
+</html>
