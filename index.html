@@ -3,33 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
 
   <body>
 
     <h1>NAME of the Best Basketball Player of ALL TIME!</h1><br>
+    <img id="image" src="https://basketballideology.com/wp-content/uploads/2016/05/best-basketball-nets-400x300.png" width="20%" height="40%"></img>
     <h2>(Press any key to start)</h2><br>
+    <section>
         <div class="win-counter-section">
             Wins
             <div id="win-number-here"></div>
         </div><br>
+    </section>
+        <section class="s1">
             <div class="word-section">
                 Basketball Player's Name
                 <div id="guessed-letters-here">
-                    <div id="firstL">_</div>
-                    <div id="secondL">_</div>
-                    <div id="thirdL">_</div>
-                    <div id="fourthL">_</div>
+                    <p id=p1>
+                        <div id="firstL">_</div>
+                        <div id="secondL">_</div>
+                        <div id="thirdL">_</div>
+                        <div id="fourthL">_</div>
+                    </p>
                     <br>
-                    <div id="fifthL">_</div>
-                    <div id="sixthL">_</div>
-                    <div id="seventhL">_</div>
-                    <div id="eigthL">_</div>
-                    <div id="ninthL">_</div>
-                    <div id="tenthL">_</div>
-
+                    <p id=p2>
+                        <div id="fifthL">_</div>
+                        <div id="sixthL">_</div>
+                        <div id="seventhL">_</div>
+                        <div id="eigthL">_</div>
+                        <div id="ninthL">_</div>
+                        <div id="tenthL">_</div>
+                    </p>
                 </div>
             </div><br>
+        </section>
+        <section class="s2">
                 <div class="remaining-counter-section">
                         Number of Guesses Remaining
                     <div id="remaining-numbers-here"></div>
@@ -39,8 +50,10 @@
                         <div id="used-letters-here"></div>
                     </div><br>
                         <div id="game-message"></div><br>
+        </section>
 
     <script>
+// <script src="assets/javascript/game.js">
     var letterAll = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var letterChoices = ["k", "o", "b", "e", "r", "y", "a", "n", "t"];
 
@@ -108,7 +121,7 @@
         for (var i = 0; i < letterAll.length; i++) {
             if (userGuess === letterAll[i]) {
                 // Update used letters
-                var usedLetterP = document.createElement("p");
+                var usedLetterP = document.createElement("div");
                 usedLetterP.textContent = userGuess;
                 usedLetterSection.appendChild(usedLetterP);
                 }
