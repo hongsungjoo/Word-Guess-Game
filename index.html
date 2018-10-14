@@ -100,34 +100,22 @@
       // If there aren't, render the end game screen.
 
 
-
-
-
-
-
-
         if (firstLetter === "K" && secondLetter === "O" && thirdLetter === "B" && fourthLetter === "E") {
             winCounterSection.innerHTML = winNumber++;
             alert("You got it right!")
         }
 
-    remaining()
-
-    for (var i = 0; i < letterAll.length; i++) {
-        if (userGuess === letterAll[i]) {
-            // Update used letters
-            var usedLetterP = document.createElement("p");
-            usedLetterP.textContent = userGuess;
-            usedLetterSection.appendChild(usedLetterP);
-            }
-
-        
-        
-            // if (userGuess === "k" && userGuess === "o" && userGuest === "b" && userGuest === "e") {
-            // winCounterSection.innerHTML = winNumber++;
-            // }
+        for (var i = 0; i < letterAll.length; i++) {
+            if (userGuess === letterAll[i]) {
+                // Update used letters
+                var usedLetterP = document.createElement("p");
+                usedLetterP.textContent = userGuess;
+                usedLetterSection.appendChild(usedLetterP);
+                }
         }
-            gameOver()
+
+        remaining()
+        gameOver()
         
     
     // Update remaining guesses
@@ -143,39 +131,6 @@
     }
 }
 
-
-
-
-              
-    
-    // function to display used letters
-    // { usedLetterSection.innerHTML = userGuess; }
-
-    // We then use .forEach() to iterate through all the drinks in drinkList.
-    // With each iteration, we perform a series of code operations each time.
-    // function displayLetters() { for (var i = 0; i < letterChoices.length; i++) {
-    // // For each drink in the array, we create a new paragraph to hold that text.
-    // // A new paragraph will be created with each iteration of the loop.
-    // var usedLetterP = document.createElement("p");
-    // // We then assign the the text of this paragraph to be the text in the array item.
-    // usedLetterP.textContent = letterChoices[i];
-    // // We then add the paragraph to the our main div on the page ("#drink-options")
-    // usedLetterSection.appendChild(usedLetterP);
-    //     }
-    // }
-
-
-    // Function to update win numbers
-    // { winCounterSection.innerHTML = winNumber++; }
-    
-
-    // Function that updates the score...
-    // function updateScore() {
-    //   document.querySelector("#score").innerHTML = "Score: " + score;
-    // }
-
-
-        
 
 
     </script>
