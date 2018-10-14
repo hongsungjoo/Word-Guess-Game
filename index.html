@@ -10,7 +10,11 @@
   <body>
 
     <h1>NAME of the Best Basketball Player of ALL TIME!</h1><br>
-    <img id="image" src="https://basketballideology.com/wp-content/uploads/2016/05/best-basketball-nets-400x300.png" width="20%" height="40%"></img>
+    <div class="top-section">
+        <img id="image" src="https://basketballideology.com/wp-content/uploads/2016/05/best-basketball-nets-400x300.png" width="20%" height="40%"></img>
+            <div id="alert-zone1"></div>
+            <div id="alert-zone2"></div>
+    </div>
     <h2>(Press any key to start)</h2><br>
     <section>
         <div class="win-counter-section">
@@ -52,102 +56,8 @@
                         <div id="game-message"></div><br>
         </section>
 
-    <script>
-// <script src="assets/javascript/game.js">
-    var letterAll = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var letterChoices = ["k", "o", "b", "e", "r", "y", "a", "n", "t"];
+    <script src="assets/javascript/game.js"></script>
 
-    var winNumber = 0;
-    var currentWord = "";
-    var guessRemaining = 20;
-    // var usedLetter = "";
-    var letterIndex = 0;
-
-    var winCounterSection = document.getElementById("win-number-here");
-    var wordSection = document.getElementById("guessed-letters-here");
-    var firstLetter = document.getElementById("firstL");
-    var secondLetter = document.getElementById("secondL");
-    var thirdLetter = document.getElementById("thirdL");
-    var fourthLetter = document.getElementById("fourthL");
-    var fifthLetter = document.getElementById("fifthL");
-    var sixthLetter = document.getElementById("sixthL");
-    var seventhLetter = document.getElementById("seventhL");
-    var eigthLetter = document.getElementById("eigthL");
-    var ninthLetter = document.getElementById("ninthL");
-    var tenthLetter = document.getElementById("tenthL");
-    var remainingCounterSection = document.getElementById("remaining-numbers-here");
-    var usedLetterSection = document.getElementById("used-letters-here");
-    var gameOverMessage = document.getElementById("game-message");
-
-
-    document.onkeyup = function(event) {
-    var userGuess = event.key.toLowerCase();
-    
-        if (userGuess === "k") { firstLetter.textContent = "K" };
-        if (userGuess === "o") { secondLetter.textContent = "O" };
-        if (userGuess === "b") { thirdLetter.textContent = "B"; fifthLetter.textContent = "B" };
-        if (userGuess === "e") { fourthLetter.textContent = "E" };
-        if (userGuess === "r") { sixthLetter.textContent = "R" };
-        if (userGuess === "y") { seventhLetter.textContent = "Y" };
-        if (userGuess === "a") { eigthLetter.textContent = "A" };
-        if (userGuess === "n") { ninthLetter.textContent = "N" };
-        if (userGuess === "t") { tenthLetter.textContent = "T" };
-
-
-        // for (var i = 0; i < letterChoices.length; i++) {
-        // if (i === 8) {
-        //     winCounterSection.innerHTML = winNumber++;
-        //     alert("You got it right!")
-        // }
-        // };
-
-
-        
-      // If there are still more questions, render the next one.
-    //   if (letterIndex <= letterChoices.length - 1) {
-        
-    //   } else {
-    //     winCounterSection.innerHTML = winNumber++;
-    //     alert("You got it right!")
-    //   }
-      // If there aren't, render the end game screen.
-
-
-        if (firstLetter === "K" && secondLetter === "O" && thirdLetter === "B" && fourthLetter === "E") {
-            winCounterSection.innerHTML = winNumber++;
-            alert("You got it right!")
-        }
-
-        for (var i = 0; i < letterAll.length; i++) {
-            if (userGuess === letterAll[i]) {
-                // Update used letters
-                var usedLetterP = document.createElement("div");
-                usedLetterP.textContent = userGuess;
-                usedLetterSection.appendChild(usedLetterP);
-                }
-        }
-
-        remaining()
-        gameOver()
-        
-    
-    // Update remaining guesses
-    function remaining() { 
-    remainingCounterSection.innerHTML = guessRemaining--;
-    }
-    // Function to end game
-    function gameOver() {
-      if (guessRemaining === 0) {
-        gameOverMessage.innerHTML = "Game Over!";
-        alert("GAME OVER!")
-      }
-    }
-}
-
-
-
-    </script>
     </body>
-
 
 </html>
