@@ -7,15 +7,28 @@
 
   <body>
 
-    <h1>Word Guess Game</h1><br>
-    <h2>Press any key to start the game!</h2><br>
+    <h1>NAME of the Best Basketball Player of ALL TIME!</h1><br>
+    <h2>(Press any key to start)</h2><br>
         <div class="win-counter-section">
             Wins
             <div id="win-number-here"></div>
         </div><br>
             <div class="word-section">
-                Current Word
-                <div id="guessed-letters-here"></div>
+                Basketball Player's Name
+                <div id="guessed-letters-here">
+                    <div id="firstL">_</div>
+                    <div id="secondL">_</div>
+                    <div id="thirdL">_</div>
+                    <div id="fourthL">_</div>
+                    <br>
+                    <div id="fifthL">_</div>
+                    <div id="sixthL">_</div>
+                    <div id="seventhL">_</div>
+                    <div id="eigthL">_</div>
+                    <div id="ninthL">_</div>
+                    <div id="tenthL">_</div>
+
+                </div>
             </div><br>
                 <div class="remaining-counter-section">
                         Number of Guesses Remaining
@@ -28,61 +41,99 @@
                         <div id="game-message"></div><br>
 
     <script>
-    // var letterChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    var finalAnswer = "kobe"
-    var letterChoices = ["k", "o", "b", "e"];
+    var letterAll = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var letterChoices = ["k", "o", "b", "e", "r", "y", "a", "n", "t"];
 
     var winNumber = 0;
     var currentWord = "";
-    var guessRemaining = 10;
+    var guessRemaining = 20;
     // var usedLetter = "";
     var letterIndex = 0;
 
     var winCounterSection = document.getElementById("win-number-here");
     var wordSection = document.getElementById("guessed-letters-here");
+    var firstLetter = document.getElementById("firstL");
+    var secondLetter = document.getElementById("secondL");
+    var thirdLetter = document.getElementById("thirdL");
+    var fourthLetter = document.getElementById("fourthL");
+    var fifthLetter = document.getElementById("fifthL");
+    var sixthLetter = document.getElementById("sixthL");
+    var seventhLetter = document.getElementById("seventhL");
+    var eigthLetter = document.getElementById("eigthL");
+    var ninthLetter = document.getElementById("ninthL");
+    var tenthLetter = document.getElementById("tenthL");
     var remainingCounterSection = document.getElementById("remaining-numbers-here");
     var usedLetterSection = document.getElementById("used-letters-here");
     var gameOverMessage = document.getElementById("game-message");
 
 
-
-
     document.onkeyup = function(event) {
     var userGuess = event.key.toLowerCase();
     
+        if (userGuess === "k") { firstLetter.textContent = "K" };
+        if (userGuess === "o") { secondLetter.textContent = "O" };
+        if (userGuess === "b") { thirdLetter.textContent = "B"; fifthLetter.textContent = "B" };
+        if (userGuess === "e") { fourthLetter.textContent = "E" };
+        if (userGuess === "r") { sixthLetter.textContent = "R" };
+        if (userGuess === "y") { seventhLetter.textContent = "Y" };
+        if (userGuess === "a") { eigthLetter.textContent = "A" };
+        if (userGuess === "n") { ninthLetter.textContent = "N" };
+        if (userGuess === "t") { tenthLetter.textContent = "T" };
+
+
+        // for (var i = 0; i < letterChoices.length; i++) {
+        // if (i === 8) {
+        //     winCounterSection.innerHTML = winNumber++;
+        //     alert("You got it right!")
+        // }
+        // };
+
+
+        
+      // If there are still more questions, render the next one.
+    //   if (letterIndex <= letterChoices.length - 1) {
+        
+    //   } else {
+    //     winCounterSection.innerHTML = winNumber++;
+    //     alert("You got it right!")
+    //   }
+      // If there aren't, render the end game screen.
+
+
+
+
+
+
+
+
+        if (firstLetter === "K" && secondLetter === "O" && thirdLetter === "B" && fourthLetter === "E") {
+            winCounterSection.innerHTML = winNumber++;
+            alert("You got it right!")
+        }
+
     remaining()
 
-    for (var i = 0; i < letterChoices.length; i++) {
-        if (userGuess === letterChoices[i]) {
+    for (var i = 0; i < letterAll.length; i++) {
+        if (userGuess === letterAll[i]) {
             // Update used letters
             var usedLetterP = document.createElement("p");
             usedLetterP.textContent = userGuess;
             usedLetterSection.appendChild(usedLetterP);
             }
+
         
-            if (userGuess === "k" && userGuess === "o" && userGuest === "b" && userGuest === "e") {
-            winCounterSection.innerHTML = winNumber++;
-            }
-            
+        
+            // if (userGuess === "k" && userGuess === "o" && userGuest === "b" && userGuest === "e") {
+            // winCounterSection.innerHTML = winNumber++;
+            // }
+        }
             gameOver()
-        };
+        
     
-    
-    // function win() {
-    //     if ()
-    // }
-
-    // function usedLetters() {
-    //     var usedLetter = userGuess.value;
-    //     usedLetterSection.innerHTML = usedLetter;
-    //     }
-
- 
     // Update remaining guesses
     function remaining() { 
     remainingCounterSection.innerHTML = guessRemaining--;
     }
-
     // Function to end game
     function gameOver() {
       if (guessRemaining === 0) {
@@ -90,14 +141,10 @@
         alert("GAME OVER!")
       }
     }
-    // Function to update remaining guesses
+}
 
-    // function remainingGuesses() { for (var i = 0; i < letterChoices.length; i++) {
-    //     if (userGuess === letterChoices[i]) {
-    //         remainingCounterSection.innerHTML = guessRemaining--;
-    //         }
-    //     }
-    // }
+
+
 
               
     
@@ -130,41 +177,6 @@
 
         
 
-                
-
-//          if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
-
-// if ((userGuess === "r") && (computerGuess === "s")) {
-//   wins++;
-// } else if ((userGuess === "r") && (computerGuess === "p")) {
-//   losses++;
-
-
-    // winCounterSection.innerHTML = winNumber;
-    // wordSection.innterHTML = ;
-    // remainingCounterSection.innerHTML = ;
-    // usedLetterSection.innerHTML = ;
-
-
-
-
-
-
-
-    
-    
-   
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
 
     </script>
     </body>
