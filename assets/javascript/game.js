@@ -52,14 +52,13 @@ var userGuess = event.key.toLowerCase();
     updateLetterIndex()
     youWin()
     gameOver()
-    
-    
 
 // alert when letterIndex reaches 9
 function youWin () {
   if (letterIndex === 9) {
     winCounterSection.innerHTML = winNumber++;
     alertZone2.innerHTML = "YOU WIN!";
+    return;
   }
 }
 // update letterIndex when a letter from letterChoices are hit
