@@ -51,29 +51,38 @@ section {
     margin: 20px;
     background-color: aliceblue;
 }
+#win-number-here {
+    font-weight: bold;
+    margin-right: 10px;
+    color: darkcyan;
+    font-size: 22px;
+}
 #p1, #p2 {
     margin: 20px;
 }
-
 #firstL, #secondL, #thirdL, #fourthL  {
     font-weight: bold;
     float: left;
     margin-right: 10px;
     color: darkcyan;
+    font-size: 22px;
 }
 #fifthL, #sixthL, #seventhL, #eigthL, #ninthL, #tenthL {
     font-weight: bold;
     float: left;
     margin-right: 10px;
     color: darkcyan;
+    font-size: 22px;
 }
 #remaining-numbers-here {
     margin: 10px;
     font-weight: bold;
     color: darkcyan;
+    font-size: 22px;
 }
 #used-letters-here {
     margin: 10px;
     margin-right: 5px;
     color: darkcyan;
+    font-size: 22px;
 }
